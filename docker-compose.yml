@@ -1,0 +1,38 @@
+services:
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./frontend/build:/usr/share/nginx/html:ro
+    depends_on:
+      - frontend-builder
+      - backend
+    networks:
+      - app-network
+
+  frontend-builder:
+    build: ./frontend
+    volumes:
+      - ./frontend/build:/app/build
+    command: 
+      sh -c "npm run build"
+    networks:
+      - app-network
+
+  backend:
+    build: ./backend
+    expose:
+      - "8000"
+    volumes:
+      - ./backend:/app
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  frontend-build:
