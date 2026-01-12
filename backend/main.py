@@ -11,9 +11,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.get("/api/items/")
+@app.get("/items/")
 async def read_items():
     return [
         {"item_id": "Foo"}, 
-        {"item_id": "Bar"}
+        {"item_id": "Bar"},
         ]
