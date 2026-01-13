@@ -17,3 +17,14 @@ async def read_items():
         {"item_id": "Foo"},
         {"item_id": "Bar"},
         ]
+
+@app.get("/get_profiles/")
+async def get_profiles():
+    return [
+        {"name" : "Egor",
+         "email" : "egor.mrz04@gmail.com"},
+        {"name" : "Igor",
+         "email" : "igor.mrz04@gmail.com"},
+        {"name" : "Agor",
+         "email" : "Agor.mrz04@gmail.com"},
+    ]
