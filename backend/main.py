@@ -14,6 +14,6 @@ app.add_middleware(
 @app.get("/items/")
 async def read_items():
     return [
-        {"item_id": "Foo"}, 
+        {"item_id": "Foo"},
         {"item_id": "Bar"},
         ]

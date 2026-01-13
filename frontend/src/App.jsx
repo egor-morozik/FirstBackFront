@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
 
 function App() {
   const [data, setData] = useState(null);
@@ -12,4 +12,4 @@ function App() {
   return <div>{data ? JSON.stringify(data) : 'Загрузка...'}</div>;
 }
 
-export default App;
+export default App
