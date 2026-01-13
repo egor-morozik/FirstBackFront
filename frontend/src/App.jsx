@@ -5,14 +5,31 @@ import ProfileList from './ProfileList.jsx'
 function App() {
   return (
     <BrowserRouter>
-      <nav>
-        <Link to="/">
-          Главная
+      {/* Навигация с вашим дизайном */}
+      <div style={{padding: 5, justifyContent: 'center', alignItems: 'center', gap: 10, display: 'inline-flex'}}>
+        <Link 
+          to="/" 
+          style={{textDecoration: 'none'}}
+        >
+          <div style={{width: 200, height: 50, padding: 10, background: 'white', borderRadius: 12, outline: '1px #C8C8C8 solid', outlineOffset: '-1px', justifyContent: 'center', alignItems: 'center', gap: 10, display: 'flex'}}>
+            <div style={{color: 'black', fontSize: 14, fontFamily: 'Inter', fontWeight: '700', wordWrap: 'break-word'}}>
+              Главная
+            </div>
+          </div>
         </Link>
-        <Link to="/profiles">
-          Профили
+        
+        <Link 
+          to="/profiles" 
+          style={{textDecoration: 'none'}}
+        >
+          <div style={{width: 200, height: 50, padding: 10, background: 'white', borderRadius: 12, outline: '1px #C8C8C8 solid', outlineOffset: '-1px', justifyContent: 'center', alignItems: 'center', gap: 10, display: 'flex'}}>
+            <div style={{color: 'black', fontSize: 14, fontFamily: 'Inter', fontWeight: '700', wordWrap: 'break-word'}}>
+              Кандидаты
+            </div>
+          </div>
         </Link>
-      </nav>
+      </div>
+      
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/profiles" element={<ProfileList />} />
